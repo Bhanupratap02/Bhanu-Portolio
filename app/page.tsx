@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="mt-[80px] flex flex-col">
+    <main className="max-md:mt-[80px] flex flex-col">
       <HeroSection />
       <Projects />
       <Skills />

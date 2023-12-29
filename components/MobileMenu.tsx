@@ -1,10 +1,18 @@
 /** @format */
-
+"use client"
 import React from "react";
-import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet";
+import { Sheet, SheetTrigger, SheetContent, SheetClose } from "./ui/sheet";
 import { Menu } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 export default function MobileMenu() {
-  const navItems = ["_Home", "_About-me", "_Projects", "_Contact me"];
+  const navItems = [
+    { label: "_Home", href: "#hero" },
+    { label: "_About-me", href: "#about" },
+    { label: "_Projects", href: "#projects" },
+    { label: "_Contact me", href: "#contact" },
+  ];
+  const router = useRouter();
   return (
     <Sheet>
       <SheetTrigger className=" lg:hidden  hover:opacity-75 transition">
@@ -17,7 +25,11 @@ export default function MobileMenu() {
               className="py-8  text-white border-b border-b-slate-700"
               key={`mobile-${item}`}
             >
-              {item}
+              <SheetClose asChild>
+              <Link href={item.href} scroll={true}>
+                {item.label}
+              </Link>
+              </SheetClose>
             </li>
           ))}
         </ul>

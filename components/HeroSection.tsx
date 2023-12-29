@@ -1,5 +1,6 @@
 /** @format */
 
+import { AArrowDownIcon, ArrowDownAZIcon, ArrowDownIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -7,15 +8,16 @@ import React from "react";
 export default function HeroSection() {
   return (
     <section className="mx-8" id="hero">
-      <div className=" min-h-[90vh] flex flex-col lg:flex-row items-center justify-center">
+      <div className=" min-h-[90vh] flex flex-col lg:flex-row items-center justify-center relative">
         {/* Text Section */}
 
         <div className="text-white flex-1 text-center lg:text-left  lg:pl-[12rem] ">
+          <div className="block md:hidden h-[60px]"></div>
           <div>
             <p className="text-lg font-bold mb-2">Hi, I am</p>
           </div>
           <div className=" text-aliceblue">
-            <p className="text-4xl font-bold mb-2">Bhanu Pratap</p>
+            <p className="text-4xl lg:text-6xl font-bold mb-2">Bhanu Pratap</p>
           </div>
           <div>
             {" "}
@@ -29,7 +31,6 @@ export default function HeroSection() {
               I am a passionate full-stack developer with expertise in ... Lorem
               ipsum dolor sit amet consectetur adipisicing elit. Ducimus
               voluptas veniam, et incidunt dolorum accusantium doloremque
-              
             </p>
           </div>
 
@@ -56,6 +57,16 @@ export default function HeroSection() {
             alt="Your Alt Text"
             className="bg-inherit"
           />
+
+          <div className="bouncing-ball">
+            <Link href={"#about"} scroll className="bg-transparent">
+              <ArrowDownIcon
+                size={32}
+                color="#fff"
+                className="bg-transparent"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

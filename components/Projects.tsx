@@ -11,11 +11,12 @@ export default function Projects({ isHomePage = true }: ProjectsPageProps) {
   return (
     <div className="mx-8 mt-10 md:mt-1 mb-8" id="projects">
       <div className="  flex flex-col  gap-8 lg:pl-[5rem] ">
+        <div className="block  h-[60px]"></div>
         <div className="flex flex-row justify-between">
-          <div className="flex justify-between items-center gap-6">
+          <div className="flex  flex-col md:flex-row items-center justify-start gap-4 md:gap-6">
             <p className=" text-aliceblue text-4xl font-bold">Projects</p>
 
-            <div className=" w-80 h-[3px] bg-orange-400 max-md:hidden"></div>
+            <div className="w-20 md:w-80 h-[3px] bg-orange-400"></div>
           </div>
 
           <div>
