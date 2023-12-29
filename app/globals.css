@@ -77,9 +77,9 @@
   }
   body {
     /* @apply  text-foreground; */
+    scroll-behavior: smooth;
   }
 }
-
 
 
 .flip {

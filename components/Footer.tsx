@@ -25,7 +25,7 @@ const contacts = [
 
 export default function Footer() {
   return (
-    <footer className="border-t mt-[2rem] border-slate-700">
+    <footer className="border-t mt-[2rem] border-slate-700" id="contact">
       <div className="ml-36 mr-32 mt-8 max-sm:ml-5 max-sm:mr-5">
         <div className="flex justify-between flex-wrap max-md:gap-2">
           <div className="flex flex-col gap-4">

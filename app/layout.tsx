@@ -26,7 +26,7 @@ export default function RootLayout({
         <div className="w-full fixed top-0  z-40">
           <Navbar />
         </div>
-        <div className="fixed top-[150px] z-50 left-0 ml-10 flex flex-col justify-center items-center gap-2 max-sm:hidden">
+        <div className="fixed top-[150px] z-50 left-0 ml-10 flex flex-col justify-center items-center gap-2 max-lg:hidden">
           <SocialProfiles />
         </div>
         {children}

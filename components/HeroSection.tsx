@@ -6,11 +6,11 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <section className="mx-8">
-      <div className=" min-h-[70vh] flex flex-col lg:flex-row items-center justify-center">
+    <section className="mx-8" id="hero">
+      <div className=" min-h-[90vh] flex flex-col lg:flex-row items-center justify-center">
         {/* Text Section */}
 
-        <div className="text-white text-center lg:text-left lg:pl-[12rem] ">
+        <div className="text-white flex-1 text-center lg:text-left  lg:pl-[12rem] ">
           <div>
             <p className="text-lg font-bold mb-2">Hi, I am</p>
           </div>
@@ -25,12 +25,15 @@ export default function HeroSection() {
             </p>
           </div>
           <div>
-            <p className="text-sm mt-4 text-mediumaquamarine">
-              I am a passionate full-stack developer with expertise in... 
+            <p className="text-lg mt-4 max-sm:px-1 max-md:px-6 max-lg:px-12 text-mediumaquamarine">
+              I am a passionate full-stack developer with expertise in ... Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              voluptas veniam, et incidunt dolorum accusantium doloremque
+              
             </p>
           </div>
 
-          <div className="flex py-8  gap-8 items-center md:justify-start  justify-center">
+          <div className="flex py-8  gap-8 items-center lg:justify-start  justify-center">
             <Link href={"/contact"}>
               <button className="border-[#C778DD] border font-medium text-base py-2 px-4 hover:text-mediumaquamarine">
                 Contact Me!!
@@ -45,7 +48,7 @@ export default function HeroSection() {
         </div>
 
         {/* Image Section (Assuming you have an image file in the public folder) */}
-        <div className="w-[600]">
+        <div className="flex-2">
           <Image
             src="/dev.png"
             height={600}
