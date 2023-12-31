@@ -1,18 +1,56 @@
 /** @format */
-
+"use client";
 import { AArrowDownIcon, ArrowDownAZIcon, ArrowDownIcon } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import SocialProfiles from "./SocialProfiles";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
+  const imgRef = useRef(null);
+  const textRef = useRef(null);
+  useEffect(():any => {
+    // Get the image element
+    const image = imgRef.current;
+    const text = textRef.current;
+
+    // Set initial position (right outside the viewport)
+    gsap.set(image, { y: "100%" });
+    gsap.set(text, { y: "-100%" });
+
+    // Create the animation timeline
+    const tl = gsap.timeline();
+    const el = gsap.timeline();
+    el.to(text, {
+      y: "6%",
+      duration: 1,
+      ease: "bounce",
+    });
+    // Add animation to move from right to center
+    tl.to(image, {
+      y: "6%",
+      duration: 1,
+      ease: "power2.inOut", // You can change the easing function
+    });
+
+    // If you want to add more animations or events, you can chain them here
+
+    // You can also reverse the animation on component unmount
+    return () => tl.reverse();
+  }, []);
   return (
     <section className="mx-8" id="hero">
-      <div className=" min-h-[90vh] flex flex-col lg:flex-row items-center justify-center relative">
+      <div className=" min-h-[90vh] flex flex-col lg:flex-row items-center justify-center relative ">
         {/* Text Section */}
 
-        <div className="text-white flex-1 text-center lg:text-left  lg:pl-[12rem] ">
-          <div className="block md:hidden h-[60px]"></div>
+        <div
+          className="text-white flex-1 text-center lg:text-left  lg:pl-[12rem] "
+          ref={textRef}
+        >
+          <div className="block xl:hidden h-[60px]"></div>
           <div>
             <p className="text-lg font-bold mb-2">Hi, I am</p>
           </div>
@@ -36,29 +74,33 @@ export default function HeroSection() {
 
           <div className="flex py-8  gap-8 items-center lg:justify-start  justify-center">
             <Link href={"/contact"}>
-              <button className="border-[#C778DD] border font-medium text-base py-2 px-4 hover:text-mediumaquamarine">
+              <button className="border-purple-600 border font-medium text-base py-2 px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
                 Contact Me!!
               </button>
             </Link>
             <Link href={"/contact"}>
-              <button className="border-[#C778DD] border font-medium text-base py-2 px-4 hover:text-mediumaquamarine">
+              <button className="border-purple-600 border font-medium text-base py-2 px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
                 Download CV
               </button>
             </Link>
+          </div>
+          <div className="block lg:hidden my-3">
+            <SocialProfiles displayType="flex-row" />
           </div>
         </div>
 
         {/* Image Section (Assuming you have an image file in the public folder) */}
         <div className="flex-2">
           <Image
-            src="/dev.png"
-            height={600}
-            width={680}
+            src="/dev8.svg"
+            height={580}
+            width={600}
             alt="Your Alt Text"
             className="bg-inherit"
+            ref={imgRef}
           />
 
-          <div className="bouncing-ball">
+          <div className="bouncing-ball ">
             <Link href={"#about"} scroll className="bg-transparent">
               <ArrowDownIcon
                 size={32}

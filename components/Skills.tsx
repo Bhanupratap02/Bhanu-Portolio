@@ -1,8 +1,12 @@
 /** @format */
 
+"use client";
 // components/Skills.tsx
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const languages = [
   { name: "JavaScript", logo: "/js.png" },
   { name: "TypeScript", logo: "/ts.png" },
@@ -36,21 +40,51 @@ const databasesAndTools = [
   { name: "Docker", logo: "/docker.png" },
 ];
 
-
 interface SkillsProps {
   isHomePage?: boolean;
 }
 
 const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
+  const textRef = useRef(null);
+  useEffect((): any => {
+    const text = textRef.current;
+ 
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: text,
+      start: "top 80%",
+      end: "top 50%",
+      toggleActions: "play none none none",
+      onEnter: () => {
+        gsap.fromTo(
+          text,
+          {
+            opacity: 0,
+            scale: 0.5,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+          }
+        );
+      },
+    },
+  });
+
+  // Refresh ScrollTrigger whenever the component unmounts
+  return () => tl?.scrollTrigger?.refresh();
+  }, []);
   return (
-    <div id="#skills" className="my-2 md:my-6">
+    <div id="skills" className="my-2 md:my-6" ref={textRef}>
       <div className="mx-8 mt-10 md:mt-1 mb-6">
         <div className="flex flex-col gap-6 lg:pl-[5rem]">
+          <div className="block  h-[60px]"></div>
           <div className="flex  flex-col md:flex-row items-center justify-start gap-4 md:gap-6">
             <p className="text-aliceblue text-4xl font-bold">My Skills</p>
             <div className=" w-20 md:w-80 h-[3px] bg-orange-400 "></div>
           </div>
-          <div className="">
+          <div>
             <h2 className="  mb-4 text-lg font-medium  uppercase text-mediumaquamarine">
               Languages
             </h2>
@@ -70,7 +104,7 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
               ))}
             </ul>
           </div>
-          <div className="">
+          <div>
             <h2 className="  mb-4 text-lg font-medium  uppercase text-mediumaquamarine">
               Web Technologies & Frameworks
             </h2>
@@ -78,7 +112,7 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
               {frameworks.map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-transparent p-2   rounded-lg flex flex-col items-center justify-center"
+                  className="bg-transparent p-2   rounded-lg flex flex-col text-center items-center justify-center"
                 >
                   <img
                     src={skill.logo}
@@ -90,11 +124,11 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
               ))}
             </ul>
           </div>
-          <div className="">
+          <div>
             <h2 className="  mb-4 text-lg font-medium  uppercase text-mediumaquamarine">
               Databases & Dev Tools
             </h2>
-            <ul className="grid grid-cols-6 lg:grid-cols-12 gap-1 md:gap-4">
+            <ul className="grid grid-cols-6 lg:grid-cols-12 gap-1 md:gap-4 ">
               {databasesAndTools.map((skill, index) => (
                 <div
                   key={index}
@@ -110,21 +144,6 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
               ))}
             </ul>
           </div>
-          {/* <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-7  gap-6">
-          {skillsList.map((skill, index) => (
-            <div
-              key={index}
-              className="bg-transparent p-4 border border-white rounded-lg flex flex-col items-center justify-center"
-            >
-              <img
-                src={skill.logo}
-                alt={`${skill.name} `}
-                className="w-16 h-16 mb-2 bg-transparent overflow-hidden"
-              />
-              <p className="text-white">{skill.name}</p>
-            </div>
-          ))}
-        </div> */}
         </div>
       </div>
     </div>

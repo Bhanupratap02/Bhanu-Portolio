@@ -1,30 +1,43 @@
 /** @format */
 
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
 const images = [
-  { path: "/github.png", url: "https://github.com/ahuja2666/" },
-  { path: "/linkedin.png", url: "https://www.linkedin.com/in/ahujaharshit26/" },
+  { path: "/github.png", url: "https://github.com/ahuja2666/", size: 30 },
   {
-    path: "/Discord.png",
+    path: "/linkedin.png",
+    url: "https://www.linkedin.com/in/ahujaharshit26/",
+    size: 30,
+  },
+  {
+    path: "/Email.png",
     url: "https://discordapp.com/users/938844640004673536",
+    size: 40,
   },
 ];
-
-export default function SocialProfiles() {
+type SocialProfilesPops = {
+  displayType?: string;
+};
+export default function SocialProfiles({
+  displayType = "flex-col",
+}: SocialProfilesPops) {
   return (
-    <div className="flex flex-col justify-center items-center gap-4">
+    <div className={cn("flex  justify-center items-center gap-4", displayType)}>
       {images?.map((item) => {
         return (
-          <div key={item?.path}>
+          <div
+            key={item?.path}
+            className="hover:scale-125 transition duration-500 cursor-pointer "
+          >
             <Link target="_blank" href={item?.url}>
               <Image
                 src={item?.path}
-                width={40}
-                height={40}
+                width={item.size}
+                height={item.size}
                 alt={item?.path?.split("/")[1].split(".")[0]}
-                className="cursor-pointer"
+                className="cursor-pointer bg-transparent "
               />
             </Link>
           </div>
