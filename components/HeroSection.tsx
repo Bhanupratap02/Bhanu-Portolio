@@ -1,6 +1,6 @@
 /** @format */
 "use client";
-import { AArrowDownIcon, ArrowDownAZIcon, ArrowDownIcon } from "lucide-react";
+import {  ArrowDownIcon } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HeroSection() {
   const imgRef = useRef(null);
   const textRef = useRef(null);
-  useEffect(():any => {
+  useEffect((): any => {
     // Get the image element
     const image = imgRef.current;
     const text = textRef.current;
@@ -35,8 +35,6 @@ export default function HeroSection() {
       duration: 1,
       ease: "power2.inOut", // You can change the easing function
     });
-
-    // If you want to add more animations or events, you can chain them here
 
     // You can also reverse the animation on component unmount
     return () => tl.reverse();

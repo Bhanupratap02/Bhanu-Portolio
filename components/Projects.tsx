@@ -1,8 +1,12 @@
 /** @format */
-
+"use client"
 import Link from "next/link";
 import ProjectCard from "./ProjectCard";
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 interface ProjectsPageProps {
   isHomePage?: boolean;
 }
@@ -12,7 +16,7 @@ export default function Projects({ isHomePage = true }: ProjectsPageProps) {
     {
       title: "E-Learning Site",
       description: "Developed a fully featured E Learning Site ",
-      image: "profile.jpeg",
+      image: "card1.png",
       gitHub: "https://github.com/Bhanupratap02/E-Learning-Platform",
       live: null,
     },
@@ -20,7 +24,7 @@ export default function Projects({ isHomePage = true }: ProjectsPageProps) {
       title: "Full featured Blog Portal",
       description:
         "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments, favorites, and interactive discussions. The admin dashboard ensures efficient content management and moderation.",
-      image: "profile.jpeg",
+      image: "card2.png",
       gitHub: "https://github.com/Bhanupratap02/blog-frontend",
       live: null,
     },
@@ -28,7 +32,7 @@ export default function Projects({ isHomePage = true }: ProjectsPageProps) {
       title: "Full featured Blog Portal",
       description:
         "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments, favorites, and interactive discussions. The admin dashboard ensures efficient content management and moderation.",
-      image: "/foodie.jpg",
+      image: "card5.png",
       gitHub: "https://github.com/Bhanupratap02/blog-frontend",
       live: null,
     },
@@ -36,7 +40,7 @@ export default function Projects({ isHomePage = true }: ProjectsPageProps) {
       title: "Full featured Blog Portal",
       description:
         "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments, favorites, and interactive discussions. The admin dashboard ensures efficient content management and moderation.",
-      image: "/foodie.jpg",
+      image: "card6.jpg",
       gitHub: "https://github.com/Bhanupratap02/blog-frontend",
       live: null,
     },
@@ -57,8 +61,39 @@ export default function Projects({ isHomePage = true }: ProjectsPageProps) {
       live: null,
     },
   ];
+  const projectsRef = useRef(null);
+
+  useEffect(() => {
+   const projectsSection = projectsRef.current;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: projectsSection,
+        start: "top 80%",
+        end: "top 50%",
+        toggleActions: "play none none none",
+        onEnter: () => {
+          gsap.fromTo(
+            projectsSection,
+            {
+              opacity: 0,
+              scale: 0.5,
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+            }
+          );
+        },
+      },
+    });
+
+   // Refresh ScrollTrigger whenever the component unmounts
+   return () => tl.scrollTrigger?.refresh();
+    }, []);
   return (
-    <div className="mx-8 mt-10 md:mt-1 mb-8" id="projects">
+    <div className="mx-8 mt-10 md:mt-1 mb-8" id="projects" ref={projectsRef}>
       <div className="  flex flex-col  gap-8 lg:pl-[5rem] ">
         <div className="block  h-[60px]"></div>
         <div className="flex flex-row justify-between">
@@ -69,7 +104,7 @@ export default function Projects({ isHomePage = true }: ProjectsPageProps) {
           </div>
 
           <div>
-            <Link href={"/contact"}>
+            <Link href={"https://github.com/Bhanupratap02?tab=repositories"}>
               <button className="border-purple-600 border font-medium text-base py-2 px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
                 View All
               </button>
