@@ -10,19 +10,21 @@ gsap.registerPlugin(ScrollTrigger);
 const languages = [
   { name: "JavaScript", logo: "/js.png" },
   { name: "TypeScript", logo: "/ts.png" },
-  { name: "Solidity", logo: "/solidity.svg" },
+  // { name: "Solidity", logo: "/solidity.svg" },
   { name: "C++", logo: "/c++.png" },
   { name: "Java", logo: "/java.png" },
   { name: "Python", logo: "/python.png" },
   { name: "PHP", logo: "/php.png" },
 ];
 const frameworks = [
+
+  // { name: "Angular", logo: "/ng.png" },
+  { name: "Node & Express", logo: "/NodeJs.png" },
   { name: "React", logo: "/React.png" },
   { name: "Next", logo: "/next.webp" },
-  { name: "Angular", logo: "/ng.png" },
-  { name: "Node & Express", logo: "/NodeJs.png" },
   { name: "Laravel", logo: "/laravel.png" },
   { name: "Django", logo: "/dj.png" },
+  { name: "SpringBoot", logo: "/spring.png" },
   { name: "React Native", logo: "/rn.png" },
   { name: "HTML", logo: "/html-5.png" },
   { name: "CSS", logo: "/css-3.png" },
@@ -85,7 +87,7 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
             <div className=" w-20 md:w-80 h-[3px] bg-orange-400 "></div>
           </div>
           <div>
-            <h2 className="  mb-4 text-lg font-medium  uppercase text-mediumaquamarine">
+            <h2 className="  mb-4 text-lg font-medium max-sm:text-base  uppercase text-mediumaquamarine">
               Languages
             </h2>
             <ul className="grid grid-cols-6 lg:grid-cols-12 gap-4">
@@ -105,7 +107,7 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
             </ul>
           </div>
           <div>
-            <h2 className="  mb-4 text-lg font-medium  uppercase text-mediumaquamarine">
+            <h2 className="  mb-4 text-lg font-medium max-sm:text-base uppercase text-mediumaquamarine">
               Web Technologies & Frameworks
             </h2>
             <ul className="grid grid-cols-6 lg:grid-cols-12 gap-4">
@@ -125,7 +127,7 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
             </ul>
           </div>
           <div>
-            <h2 className="  mb-4 text-lg font-medium  uppercase text-mediumaquamarine">
+            <h2 className="  mb-4 text-lg font-medium max-sm:text-base uppercase text-mediumaquamarine">
               Databases & Dev Tools
             </h2>
             <ul className="grid grid-cols-6 lg:grid-cols-12 gap-1 md:gap-4 ">

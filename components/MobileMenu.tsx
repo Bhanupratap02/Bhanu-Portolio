@@ -5,9 +5,10 @@ import { Sheet, SheetTrigger, SheetContent, SheetClose } from "./ui/sheet";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+
 export default function MobileMenu() {
   const navItems = [
-    { label: "_Home", href: "#hero" },
+    { label: "_Home", href: "/" },
     { label: "_About-me", href: "#about" },
     { label: "_Projects", href: "#projects" },
     { label: "_Contact me", href: "#contact" },

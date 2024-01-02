@@ -148,7 +148,18 @@
   overflow: hidden;
   border-radius: 10px;
 }
-
+@media (min-width: 700px) {
+  .flip > .front,
+.flip > .back {
+  height: 310px;
+}
+}
+@media (min-width: 1024px) {
+  .flip > .front,
+.flip > .back {
+  height: 270px;
+}
+}
 .flip > .back p {
   font-size: 0.9125rem;
   line-height: 160%;

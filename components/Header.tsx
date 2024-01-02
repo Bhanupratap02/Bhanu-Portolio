@@ -22,7 +22,7 @@ const Header: NextPage = () => {
             <div className="  relative box-border w-px h-14 border-r-[1px] border-solid  border-slate-700" />
             <div className="relative ">
               <Link
-                href="#hero"
+                href="/"
                 scroll={true}
                 className="hover:text-purple-600"
               >

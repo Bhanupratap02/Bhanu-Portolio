@@ -5,61 +5,60 @@ import ProjectCard from "./ProjectCard";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import {links} from "@/lib/links"
 gsap.registerPlugin(ScrollTrigger);
-interface ProjectsPageProps {
-  isHomePage?: boolean;
-}
 
-export default function Projects({ isHomePage = true }: ProjectsPageProps) {
+
+export default function Projects() {
   const projects = [
     {
-      title: "E-Learning Site",
-      description: "Developed a fully featured E Learning Site ",
+      title: "E-commerce Site",
+      description: "It is an intuitive e-commerce platform, ensuring seamless navigation, secure transactions, and responsive design for optimal user experience. ",
       image: "card1.png",
-      gitHub: "https://github.com/Bhanupratap02/E-Learning-Platform",
+      gitHub: links.project1,
       live: null,
     },
     {
-      title: "Full featured Blog Portal",
+      title: "Food Ordering Website",
       description:
-        "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments, favorites, and interactive discussions. The admin dashboard ensures efficient content management and moderation.",
+        "The online food shopping website is designed allows convenient browsing, selection, and purchase of various food items.",
+      image: "/foodie.jpg",
+      gitHub:  links.project2,
+      live: null,
+    },
+    {
+      title: "Blog Portal",
+      description:
+        "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments.",
+      image: "/card7.png",
+      gitHub:  links.project3 ,
+      live: null,
+    },
+    {
+      title: "E-Learning Website",
+      description:
+        "This Learning Management System serves as a centralized hub for educational content, enabling easy access, interaction, and tracking of courses and materials.",
       image: "card2.png",
-      gitHub: "https://github.com/Bhanupratap02/blog-frontend",
+      gitHub:  links.project4,
       live: null,
     },
     {
-      title: "Full featured Blog Portal",
+      title: "Social Media Site",
       description:
-        "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments, favorites, and interactive discussions. The admin dashboard ensures efficient content management and moderation.",
+        "A comprehensive social media platform with features like messaging, posts, and notifications, connecting users seamlessly in a vibrant online community.",
       image: "card5.png",
-      gitHub: "https://github.com/Bhanupratap02/blog-frontend",
+      gitHub: links.project5,
       live: null,
     },
     {
-      title: "Full featured Blog Portal",
+      title: "Crossplatform Mobile App",
       description:
-        "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments, favorites, and interactive discussions. The admin dashboard ensures efficient content management and moderation.",
+        "It is a React Native-based news link sharing app enables users to discover, share, news, study articles easily, fostering community engagement  around trending topics.",
       image: "card6.jpg",
-      gitHub: "https://github.com/Bhanupratap02/blog-frontend",
+      gitHub:  links.project6,
       live: null,
     },
-    {
-      title: "Full featured Blog Portal",
-      description:
-        "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments, favorites, and interactive discussions. The admin dashboard ensures efficient content management and moderation.",
-      image: "/foodie.jpg",
-      gitHub: "https://github.com/Bhanupratap02/blog-frontend",
-      live: null,
-    },
-    {
-      title: "Full featured Blog Portal",
-      description:
-        "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments, favorites, and interactive discussions. The admin dashboard ensures efficient content management and moderation.",
-      image: "/foodie.jpg",
-      gitHub: "https://github.com/Bhanupratap02/blog-frontend",
-      live: null,
-    },
+
   ];
   const projectsRef = useRef(null);
 
@@ -90,7 +89,7 @@ export default function Projects({ isHomePage = true }: ProjectsPageProps) {
     });
 
    // Refresh ScrollTrigger whenever the component unmounts
-   return () => tl.scrollTrigger?.refresh();
+   return () => tl?.scrollTrigger?.refresh();
     }, []);
   return (
     <div className="mx-8 mt-10 md:mt-1 mb-8" id="projects" ref={projectsRef}>
@@ -104,14 +103,14 @@ export default function Projects({ isHomePage = true }: ProjectsPageProps) {
           </div>
 
           <div>
-            <Link href={"https://github.com/Bhanupratap02?tab=repositories"}>
+            <a href={links.git} target="_blank" rel="noopener noreferrer">
               <button className="border-purple-600 border font-medium text-base py-2 px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
                 View All
               </button>
-            </Link>
+            </a>
           </div>
         </div>
-        <p className="text-mediumaquamarine  font-normal text-base">
+        <p className="text-mediumaquamarine  font-normal text-base max-sm:text-sm">
           Here is the list of some of my projects i have worked on,feel free to
           check it out
         </p>

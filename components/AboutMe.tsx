@@ -6,6 +6,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default function AboutMe() {
+  function calculateYears() {
+    const startYear = 2019;
+    const currentYear = new Date().getFullYear();
+    const yearDifference = currentYear - startYear;
+  
+    return yearDifference;
+  }
+
   const leftComponentRef = useRef(null);
   const rightComponentRef = useRef(null);
   useEffect(() => {
@@ -83,33 +91,37 @@ export default function AboutMe() {
             className="flex flex-col  justify-center md:justify-between lg:flex-row gap-8 items-center  lg:items-center"
             ref={rightComponentRef}
           >
-            <div className="lg:flex-4">
+            <div className="lg:flex-4 ">
               <img
                 src={"/profile.jpeg"}
-                className=" w-[20rem] lg:w-[25rem] bg-cover h-[20rem] lg:border-t-[6px] lg:border-l-[6px] border-slate-800 rounded-[80%] border-[6px] lg:border-b-0 lg:border-r-0 lg:rounded-lg"
+                className=" w-[12rem] h-[12rem] md:w-[20rem] lg:w-[25rem] bg-cover md:h-[20rem] lg:border-t-[6px] lg:border-l-[6px] border-slate-800 rounded-[80%] border-[6px] lg:border-b-0 lg:border-r-0 lg:rounded-lg"
                 alt="Profile"
               />
             </div>
-            <div className="text-lg flex-1 mx-4">
+            <div className="text-lg max-sm:text-center  max-sm:text-sm flex-1 mx-4">
               <p className="text-mediumaquamarine">
-                Hi. I am a MERN Stack developer for about 7 years ranging from
-                small scale websites to large scale eCommerce web applications.
-                (Stripe, Paypal, Coinbase commerce payment gateway integrations
-                too !)
+               With {calculateYears()} years of experience as a seasoned full-stack developer, 
+              I bring an extensive range of knowledge in developing end-to-end online solutions.
+               I have successfully led the development, implementation, and maintenance of high-performance
+                applications with a solid background in Devops Principles.
+{/* 
+                Hi! I am  a Full-Stack  developer  with two years of hands-on experience, 
+                I specialize in crafting dynamic and user-centric web applications. 
+                Proficient in both front-end and back-end technologies, 
+                I bring a passion for innovation and a proven  record of delivering user friendly, robust,
+                scalable solutions. */}
+              </p>
+              <p className="text-mediumaquamarine my-8"> 
+                I bring a passion for innovation and a proven  record of delivering user friendly, robust,
+                scalable solutions.
               </p>
               <p className="text-mediumaquamarine">
-                It all started in 2017 where I first learnt to build static
-                landing pages. Then I came to know about how servers work with
-                the help of JAVA, Python, PHP and now currently Node.js. That
-                expanded my view upon the possibilities of creating huge
-                applications
-              </p>
-              <p className="text-mediumaquamarine">
-                Then I slowly started engaging myself building single page
-                application development, state management techniques using
-                Redux.js and Context API and sideeffects using Redux-thunk and
-                Redux-Saga, building microservices in Node.js and Express.js and
-                knowing how to connect to databases using MongoDB and MySQL
+              
+                 Beyond that, I am diving into IoT, exploring its exciting possibilities as a part of my continuous
+                  learning journey.
+{/* 
+                 Beyond that, I am diving into Solidity and Web3, exploring its exciting possibilities as a part of my continuous
+                  learning journey. */}
               </p>
             </div>
           </div>

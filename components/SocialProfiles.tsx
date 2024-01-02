@@ -3,17 +3,18 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import {links} from "@/lib/links"
 
 const images = [
-  { path: "/github.png", url: "https://github.com/ahuja2666/", size: 30 },
+  { path: "/github.png", url: links.git, size: 30 },
   {
     path: "/linkedin.png",
-    url: "https://www.linkedin.com/in/ahujaharshit26/",
+    url: links.linkedin,
     size: 30,
   },
   {
     path: "/Email.png",
-    url: "https://discordapp.com/users/938844640004673536",
+    url: `mailto: ${links.email}`,
     size: 40,
   },
 ];

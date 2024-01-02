@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import SocialProfiles from "./SocialProfiles";
+import {links} from "@/lib/links"
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
@@ -45,10 +46,10 @@ export default function HeroSection() {
         {/* Text Section */}
 
         <div
-          className="text-white flex-1 text-center lg:text-left  lg:pl-[12rem] "
+          className="text-white flex-1 text-center lg:text-left  lg:pl-[12rem]  "
           ref={textRef}
         >
-          <div className="block xl:hidden h-[60px]"></div>
+          {/* <div className="block xl:hidden h-[5px]"></div> */}
           <div>
             <p className="text-lg font-bold mb-2">Hi, I am</p>
           </div>
@@ -63,24 +64,29 @@ export default function HeroSection() {
             </p>
           </div>
           <div>
-            <p className="text-lg mt-4 max-sm:px-1 max-md:px-6 max-lg:px-12 text-mediumaquamarine">
-              I am a passionate full-stack developer with expertise in ... Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-              voluptas veniam, et incidunt dolorum accusantium doloremque
+            <p className="text-lg mt-4 max-sm:px-1 max-md:px-6 max-lg:px-12 max-sm:text-sm text-mediumaquamarine">
+            Hello! I am a full-stack web developer who loves turning ideas into cool websites. 
+            I enjoy coding and solving problems, bringing a mix of creativity and tech skills to make
+             awesome online experiences.
             </p>
           </div>
 
           <div className="flex py-8  gap-8 items-center lg:justify-start  justify-center">
-            <Link href={"/contact"}>
-              <button className="border-purple-600 border font-medium text-base py-2 px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
-                Contact Me!!
+              <button className="border-purple-600 border font-medium text-base py-2  px-2 md:px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
+              <a
+              href={links.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+            > Contact Me!!
+            </a>
               </button>
-            </Link>
-            <Link href={"/contact"}>
+            
               <button className="border-purple-600 border font-medium text-base py-2 px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
-                Download CV
+              <a href={links.resume} target="_blank" rel="noopener noreferrer">
+                View Resume
+                </a>
               </button>
-            </Link>
+
           </div>
           <div className="block lg:hidden my-3">
             <SocialProfiles displayType="flex-row" />
@@ -90,6 +96,7 @@ export default function HeroSection() {
         {/* Image Section (Assuming you have an image file in the public folder) */}
         <div className="flex-2">
           <Image
+            // src="/dev5.svg"
             src="/dev8.svg"
             height={580}
             width={600}

@@ -2,27 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import {links} from "@/lib/links"
 const contacts = [
   {
     img: "/GitHub.png",
-    alt: "disord icon",
-    href: "https://discordapp.com/users/938844640004673536",
-    text: "!harshit#7305",
+    alt: "github icon",
+    href: links.git,
+    text: "pallishreeb",
     size: 30,
   },
   {
     img: "/Linkedin.png",
     alt: "linkedin icon",
-    href: "https://www.linkedin.com/in/ahujaharshit26/",
-    text: "@ahujaharshit26",
+    href: links.linkedin,
+    text: "@pb121097",
     size: 30,
   },
   {
     img: "/Email.png",
     alt: "email icon",
-    href: "mailto: ahujaharshit26@gamil.com",
-    text: "ahujaharshit26@gamil.com",
-    size: 35,
+    href: `mailto: ${links.email}`,
+    text: "@pallishreebehera01",
+    size: 38,
   },
 ];
 
@@ -33,14 +34,14 @@ export default function Footer() {
         <div className="flex justify-between flex-wrap max-md:gap-2 pb-4">
           <div className="flex flex-col gap-4">
             <div className="flex gap-2 flex-wrap">
-              <Link target="_blank" href={"mailto: bhanupratap193@gmail.com"}>
+              <Link target="_blank" href={"mailto: pallishreebehera01@gmail.com"}>
                 <span className="text-[#ABB2BF] text-base font-normal">
-                  bhanupratap193@gmail.com
+                  pallishreebehera01@gmail.com
                 </span>
               </Link>
             </div>
             <div className="text-white font-normal text-base">
-              Full Stack Web App Developer
+              Software Developer
             </div>
           </div>
           <div className="flex flex-col gap-4">
