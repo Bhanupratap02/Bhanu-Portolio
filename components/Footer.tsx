@@ -8,21 +8,21 @@ const contacts = [
     img: "/GitHub.png",
     alt: "github icon",
     href: links.git,
-    text: "pallishreeb",
+    text: "Bhanupratap02",
     size: 30,
   },
   {
     img: "/Linkedin.png",
     alt: "linkedin icon",
     href: links.linkedin,
-    text: "@pb121097",
+    text: "Bhanu pratap Behera",
     size: 30,
   },
   {
     img: "/Email.png",
     alt: "email icon",
     href: `mailto: ${links.email}`,
-    text: "@pallishreebehera01",
+    text: "bhanupratapbehera193@gmail.com",
     size: 38,
   },
 ];
@@ -34,9 +34,12 @@ export default function Footer() {
         <div className="flex justify-between flex-wrap max-md:gap-2 pb-4">
           <div className="flex flex-col gap-4">
             <div className="flex gap-2 flex-wrap">
-              <Link target="_blank" href={"mailto: pallishreebehera01@gmail.com"}>
+              <Link
+                target="_blank"
+                href={`mailto: ${links.email}`}
+              >
                 <span className="text-[#ABB2BF] text-base font-normal">
-                  pallishreebehera01@gmail.com
+                  {links.email}
                 </span>
               </Link>
             </div>

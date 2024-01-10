@@ -65,28 +65,36 @@ export default function HeroSection() {
           </div>
           <div>
             <p className="text-lg mt-4 max-sm:px-1 max-md:px-6 max-lg:px-12 max-sm:text-sm text-mediumaquamarine">
-            Hello! I am a full-stack web developer who loves turning ideas into cool websites. 
-            I enjoy coding and solving problems, bringing a mix of creativity and tech skills to make
-             awesome online experiences.
+              Hello! I am a full-stack web developer who loves turning ideas
+              into cool websites. I enjoy coding and solving problems, bringing
+              a mix of creativity and tech skills to make awesome online
+              experiences.
             </p>
           </div>
 
           <div className="flex py-8  gap-8 items-center lg:justify-start  justify-center">
-              <button className="border-purple-600 border font-medium text-base py-2  px-2 md:px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
+            <button className="border-purple-600 border font-medium text-base py-2  px-2 md:px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
               <a
-              href={links.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-            > Contact Me!!
-            </a>
-              </button>
-            
-              <button className="border-purple-600 border font-medium text-base py-2 px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
-              <a href={links.resume} target="_blank" rel="noopener noreferrer">
-                View Resume
-                </a>
-              </button>
+                className="bg-inherit"
+                href={links.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                Contact Me!!
+              </a>
+            </button>
 
+            <button className="border-purple-600 border font-medium text-base py-2 px-4 hover:text-white rounded-xl hover:bg-purple-600 hover:border-0">
+              <a
+                href={links.resume}
+                className="bg-inherit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Resume
+              </a>
+            </button>
           </div>
           <div className="block lg:hidden my-3">
             <SocialProfiles displayType="flex-row" />

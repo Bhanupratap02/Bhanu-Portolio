@@ -7,10 +7,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default function AboutMe() {
   function calculateYears() {
-    const startYear = 2019;
+    const startYear = 2022;
     const currentYear = new Date().getFullYear();
     const yearDifference = currentYear - startYear;
-  
+
     return yearDifference;
   }
 
@@ -88,40 +88,30 @@ export default function AboutMe() {
             <div className=" w-20 md:w-80 h-[3px] bg-orange-400 "></div>
           </div>
           <div
-            className="flex flex-col  justify-center md:justify-between lg:flex-row gap-8 items-center  lg:items-center"
+            className="flex flex-col  justify-center md:justify-between lg:flex-row gap-8 items-center  lg:items-start"
             ref={rightComponentRef}
           >
             <div className="lg:flex-4 ">
               <img
-                src={"/profile.jpeg"}
-                className=" w-[12rem] h-[12rem] md:w-[20rem] lg:w-[25rem] bg-cover md:h-[20rem] lg:border-t-[6px] lg:border-l-[6px] border-slate-800 rounded-[80%] border-[6px] lg:border-b-0 lg:border-r-0 lg:rounded-lg"
+                src={"/dp.jpeg"}
+                className=" w-[12rem] h-[12rem] md:w-[20rem] lg:w-[22rem] bg-cover md:h-[20rem] lg:border-t-[6px] lg:border-l-[6px] border-slate-800 rounded-[80%] border-[6px] lg:border-b-0 lg:border-r-0 lg:rounded-lg"
                 alt="Profile"
               />
             </div>
-            <div className="text-lg max-sm:text-center  max-sm:text-sm flex-1 mx-4">
-              <p className="text-mediumaquamarine">
-               With {calculateYears()} years of experience as a seasoned full-stack developer, 
-              I bring an extensive range of knowledge in developing end-to-end online solutions.
-               I have successfully led the development, implementation, and maintenance of high-performance
-                applications with a solid background in Devops Principles.
-{/* 
-                Hi! I am  a Full-Stack  developer  with two years of hands-on experience, 
-                I specialize in crafting dynamic and user-centric web applications. 
-                Proficient in both front-end and back-end technologies, 
-                I bring a passion for innovation and a proven  record of delivering user friendly, robust,
-                scalable solutions. */}
+            <div className="text-lg max-sm:text-center  max-sm:text-sm flex-1 mx-4 lg:leading-10">
+              <p className="text-mediumaquamarine mb-6">
+                Hi! I am a Full-Stack developer with {calculateYears()} years of
+                hands-on experience, I specialize in crafting dynamic and
+                user-centric web applications. Proficient in both front-end and
+                back-end technologies, I bring a passion for innovation and a
+                proven record of delivering user friendly, robust, scalable
+                solutions.
               </p>
-              <p className="text-mediumaquamarine my-8"> 
-                I bring a passion for innovation and a proven  record of delivering user friendly, robust,
-                scalable solutions.
-              </p>
+
               <p className="text-mediumaquamarine">
-              
-                 Beyond that, I am diving into IoT, exploring its exciting possibilities as a part of my continuous
-                  learning journey.
-{/* 
-                 Beyond that, I am diving into Solidity and Web3, exploring its exciting possibilities as a part of my continuous
-                  learning journey. */}
+                Beyond that, I am diving into Solidity and Web3, exploring its
+                exciting possibilities as a part of my continuous learning
+                journey.
               </p>
             </div>
           </div>

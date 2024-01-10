@@ -10,21 +10,20 @@ gsap.registerPlugin(ScrollTrigger);
 const languages = [
   { name: "JavaScript", logo: "/js.png" },
   { name: "TypeScript", logo: "/ts.png" },
-  // { name: "Solidity", logo: "/solidity.svg" },
+  { name: "Solidity", logo: "/solidity.svg" },
   { name: "C++", logo: "/c++.png" },
   { name: "Java", logo: "/java.png" },
-  { name: "Python", logo: "/python.png" },
+  // { name: "Python", logo: "/python.png" },
   { name: "PHP", logo: "/php.png" },
 ];
 const frameworks = [
-
-  // { name: "Angular", logo: "/ng.png" },
-  { name: "Node & Express", logo: "/NodeJs.png" },
   { name: "React", logo: "/React.png" },
+  { name: "Node & Express", logo: "/NodeJs.png" },
   { name: "Next", logo: "/next.webp" },
-  { name: "Laravel", logo: "/laravel.png" },
-  { name: "Django", logo: "/dj.png" },
-  { name: "SpringBoot", logo: "/spring.png" },
+  { name: "Angular", logo: "/ng.png" },
+  // { name: "Laravel", logo: "/laravel.png" },
+  // { name: "Django", logo: "/dj.png" },
+  // { name: "SpringBoot", logo: "/spring.png" },
   { name: "React Native", logo: "/rn.png" },
   { name: "HTML", logo: "/html-5.png" },
   { name: "CSS", logo: "/css-3.png" },
@@ -37,9 +36,9 @@ const databasesAndTools = [
   { name: "Git", logo: "/git.png" },
   { name: "Postman", logo: "/postman.svg" },
   { name: "Figma", logo: "/figma.png" },
-  { name: "Jira", logo: "/jira.png" },
-  { name: "AWS", logo: "/aws.png" },
-  { name: "Docker", logo: "/docker.png" },
+  // { name: "Jira", logo: "/jira.png" },
+  // { name: "AWS", logo: "/aws.png" },
+  // { name: "Docker", logo: "/docker.png" },
 ];
 
 interface SkillsProps {
@@ -50,32 +49,32 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
   const textRef = useRef(null);
   useEffect((): any => {
     const text = textRef.current;
- 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: text,
-      start: "top 80%",
-      end: "top 50%",
-      toggleActions: "play none none none",
-      onEnter: () => {
-        gsap.fromTo(
-          text,
-          {
-            opacity: 0,
-            scale: 0.5,
-          },
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 1,
-          }
-        );
-      },
-    },
-  });
 
-  // Refresh ScrollTrigger whenever the component unmounts
-  return () => tl?.scrollTrigger?.refresh();
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: text,
+        start: "top 80%",
+        end: "top 50%",
+        toggleActions: "play none none none",
+        onEnter: () => {
+          gsap.fromTo(
+            text,
+            {
+              opacity: 0,
+              scale: 0.5,
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+            }
+          );
+        },
+      },
+    });
+
+    // Refresh ScrollTrigger whenever the component unmounts
+    return () => tl?.scrollTrigger?.refresh();
   }, []);
   return (
     <div id="skills" className="my-2 md:my-6" ref={textRef}>
