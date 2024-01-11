@@ -18,7 +18,7 @@ const languages = [
 ];
 const frameworks = [
   { name: "React", logo: "/React.png" },
-  { name: "Node & Express", logo: "/NodeJs.png" },
+  { name: "Node & Express", logo: "/NodeJS.png" },
   { name: "Next", logo: "/next.webp" },
   { name: "Angular", logo: "/ng.png" },
   // { name: "Laravel", logo: "/laravel.png" },
@@ -89,7 +89,7 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
             <h2 className="  mb-4 text-lg font-medium max-sm:text-base  uppercase text-mediumaquamarine">
               Languages
             </h2>
-            <ul className="grid grid-cols-6 lg:grid-cols-12 gap-4">
+            <ul className="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-12 gap-4">
               {languages.map((skill, index) => (
                 <div
                   key={index}

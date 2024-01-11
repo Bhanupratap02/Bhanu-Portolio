@@ -1,5 +1,5 @@
 /** @format */
-"use client"
+"use client";
 import React from "react";
 import { Sheet, SheetTrigger, SheetContent, SheetClose } from "./ui/sheet";
 import { Menu } from "lucide-react";
@@ -9,9 +9,9 @@ import { useRouter } from "next/navigation";
 export default function MobileMenu() {
   const navItems = [
     { label: "_Home", href: "/" },
-    { label: "_About-me", href: "#about" },
     { label: "_Projects", href: "#projects" },
-    { label: "_Contact me", href: "#contact" },
+    { label: "_Skills", href: "#skills" },
+    { label: "_About-me", href: "#about" },
   ];
   const router = useRouter();
   return (
@@ -27,9 +27,9 @@ export default function MobileMenu() {
               key={`mobile-${item}`}
             >
               <SheetClose asChild>
-              <Link href={item.href} scroll={true}>
-                {item.label}
-              </Link>
+                <Link href={item.href} scroll={true}>
+                  {item.label}
+                </Link>
               </SheetClose>
             </li>
           ))}
