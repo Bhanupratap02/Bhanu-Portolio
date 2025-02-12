@@ -1,6 +1,5 @@
 /** @format */
 "use client"
-import Link from "next/link";
 import ProjectCard from "./ProjectCard";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
@@ -13,7 +12,8 @@ export default function Projects() {
   const projects = [
     {
       title: "E-commerce Site",
-      description: "It is an intuitive e-commerce platform, ensuring seamless navigation, secure transactions, and responsive design for optimal user experience. ",
+      description:
+        "It is an intuitive e-commerce platform, ensuring seamless navigation, secure transactions, and responsive design for optimal user experience. ",
       image: "card1.png",
       gitHub: links.project1,
       live: null,
@@ -23,24 +23,33 @@ export default function Projects() {
       description:
         "The online food shopping website is designed allows convenient browsing, selection, and purchase of various food items.",
       image: "/foodie.jpg",
-      gitHub:  links.project2,
+      gitHub: links.project2,
       live: null,
     },
+    // {
+    //   title: "Blog Portal",
+    //   description:
+    //     "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments.",
+    //   image: "/card7.png",
+    //   gitHub: links.project3,
+    //   live: null,
+    // },
     {
-      title: "Blog Portal",
+      title: "CarZone",
       description:
-        "Delivered a feature-rich blog application that not only provides users with a seamless reading experience but also fosters community engagement through comments.",
-      image: "/card7.png",
-      gitHub:  links.project3 ,
-      live: null,
+        "Built a platform for a car selling business with features like easy search, filters, notifications, and tools for managing listings.",
+      image: "/carzone.png",
+      gitHub: links.project3,
+      live: "https://carzoneplus.onrender.com/",
     },
+
     {
       title: "E-Learning Website",
       description:
         "This Learning Management System serves as a centralized hub for educational content, enabling easy access, interaction, and tracking of courses and materials.",
       image: "card2.png",
-      gitHub:  links.project4,
-      live: null,
+      gitHub: links.project4,
+      live: "https://e-learning-platform-opal.vercel.app/search",
     },
     {
       title: "Social Media Site",
@@ -51,14 +60,13 @@ export default function Projects() {
       live: null,
     },
     {
-      title: "Crossplatform Mobile App",
+      title: "LinksDaily",
       description:
         "It is a React Native-based news link sharing app enables users to discover, share, news, study articles easily, fostering community engagement  around trending topics.",
       image: "card6.jpg",
-      gitHub:  links.project6,
+      gitHub: links.project6,
       live: null,
     },
-
   ];
   const projectsRef = useRef(null);
 

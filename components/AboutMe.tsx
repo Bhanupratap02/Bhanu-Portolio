@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default function AboutMe() {
   function calculateYears() {
-    const startYear = 2022;
+    const startYear = 2023;
     const currentYear = new Date().getFullYear();
     const yearDifference = currentYear - startYear;
 

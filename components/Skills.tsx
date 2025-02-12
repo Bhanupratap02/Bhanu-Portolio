@@ -12,17 +12,17 @@ const languages = [
   { name: "TypeScript", logo: "/ts.png" },
   { name: "Solidity", logo: "/solidity.svg" },
   { name: "C++", logo: "/c++.png" },
-  { name: "Java", logo: "/java.png" },
-  // { name: "Python", logo: "/python.png" },
+  // { name: "Java", logo: "/java.png" },
+  { name: "Python", logo: "/python.png" },
   { name: "PHP", logo: "/php.png" },
 ];
 const frameworks = [
   { name: "React", logo: "/React.png" },
   { name: "Node & Express", logo: "/NodeJS.png" },
   { name: "Next", logo: "/next.webp" },
-  { name: "Angular", logo: "/ng.png" },
+  // { name: "Angular", logo: "/ng.png" },
   // { name: "Laravel", logo: "/laravel.png" },
-  // { name: "Django", logo: "/dj.png" },
+  { name: "Django", logo: "/dj.png" },
   // { name: "SpringBoot", logo: "/spring.png" },
   { name: "React Native", logo: "/rn.png" },
   { name: "HTML", logo: "/html-5.png" },
@@ -37,7 +37,7 @@ const databasesAndTools = [
   { name: "Postman", logo: "/postman.svg" },
   { name: "Figma", logo: "/figma.png" },
   // { name: "Jira", logo: "/jira.png" },
-  // { name: "AWS", logo: "/aws.png" },
+  { name: "AWS", logo: "/aws.png" },
   // { name: "Docker", logo: "/docker.png" },
 ];
 
@@ -89,7 +89,7 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
             <h2 className="  mb-4 text-lg font-medium max-sm:text-base  uppercase text-mediumaquamarine">
               Languages
             </h2>
-            <ul className="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-12 gap-4">
+            <ul className="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-12 gap-6">
               {languages.map((skill, index) => (
                 <div
                   key={index}
@@ -100,7 +100,7 @@ const Skills: React.FC<SkillsProps> = ({ isHomePage = true }) => {
                     alt={`${skill.name} `}
                     className="md:w-16 lg:w-20 lg:h-20 md:h-16 mb-2 bg-transparent object-contain overflow-hidden w-8 h-8"
                   />
-                  <p className="text-white text-xs md:text-sm">{skill.name}</p>
+                  <p className="text-white text-xs  md:text-sm">{skill.name}</p>
                 </div>
               ))}
             </ul>
